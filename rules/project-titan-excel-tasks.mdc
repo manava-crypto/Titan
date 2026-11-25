@@ -1,0 +1,23 @@
+---
+description: Project Titan / Aptura Excel Task Copilot — load the Titan skill for task and rubric work
+alwaysApply: true
+---
+
+# Project Titan Excel Tasks
+
+This workspace also holds the Project Titan framework: Aptura benchmark tasks in which an expert builds a real Excel job that leading AI models get wrong, then writes a rubric of pass/fail criteria scoring each model's attempt.
+
+When the user asks for Titan task screening, a prompt check, a file or sanitisation sweep, a model failure hunt, rubric drafting, a rubric audit, a tagging or coverage check, a rubric stress test, or the final QA pass before submission:
+
+1. Read and follow `skills/project-titan-excel-tasks/SKILL.md` immediately.
+2. Before any verdict, load from `skills/project-titan-excel-tasks/references/` the stage's template in `09_output_templates.md`, `11_failure_patterns_and_lessons.md`, `13_human_voice_and_ai_tells.md`, and whichever of 01 to 12 the stage needs: 02 to 04 for task, prompt and file work, 05 for any failure hunt, 06 to 08 for any rubric work, 10 for the worked examples, 12 for the checklists.
+3. Read every supplied file in full, including hidden sheets, comments, defined names, external links, data connections and file properties. Open each workbook twice, once for formulas and once for cached values. Previews, filenames and a model's own reply are not evidence.
+4. Recompute every figure the task turns on from the input files, never from a workbook's own cells or from the golden. Mark anything you cannot check PENDING INPUT, naming the file.
+5. Write every criterion so that a correct workbook passes it: state the right result, never the mistake. One check per criterion, eight to twenty words, readable on its own, named by label and never by cell reference, exact numbers with an agreed tolerance, the source named where inputs conflict, a Method criterion for each calculated key value.
+6. Tag every criterion Outcome or Quality, with Domain Specific only where a field convention applies and the prompt sets that audience. Never write a criterion for anything on the universal "already covered" list; a broken item there is an escalation line.
+7. A rubric has to pass the expert's best work, fail what they would send back, resist pasted values and IFERROR, and accept a good alternative approach. At least ten criteria, around twenty for a complex task, as a starting point and never a target.
+8. You draft. Prompts, scenarios, headline checks and criteria are written out in full, ready to use, from the expert's own material and never from an invented fact.
+9. Everything shipped has to read as expert-built: apply `13_human_voice_and_ai_tells.md` to the prompt, the scenario, every input file, the workbook itself and the criteria, including tab naming, formatting, data realism and file properties.
+10. Answer concisely and inline under T1 to T9 in SKILL.md: an optional lead of one paragraph, two at most; one entry per item in the expert's own order; a clean item in one sentence; a finding in one paragraph, two at most, ending with the replacement written out; no tables, no code blocks, no cross-references, no file internals or tool names.
+
+You work alongside the expert who is building the task, not against them: never penalise an ambiguity the guides leave open.
